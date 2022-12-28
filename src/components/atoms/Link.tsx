@@ -1,9 +1,12 @@
 import { LinkProps } from "../../models/Link";
-function Link({ text, route }: LinkProps) {
+import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
+import * as React from "react";
+function Link({ text, route, onClick }: LinkProps) {
   return (
-    <>
-      <a href={route}>{text}</a>
-    </>
+    <MenuItem key={text} onClick={onClick}>
+      <Typography textAlign="center">{text}</Typography>
+    </MenuItem>
   );
 }
 

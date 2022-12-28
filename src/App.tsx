@@ -1,12 +1,16 @@
-import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import './App.scss'
+import { useState } from "react";
+import "./App.scss";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
 import XojePortfolio from "./components/pages/XojePortfolio";
 
 function App() {
-    const [count, setCount] = useState(0)
-    return (<XojePortfolio backgroundColor={"añgp"} label={"agñ"}/>)
-    /*return (
+  const [count, setCount] = useState(0);
+  return <XojePortfolio backgroundColor={"añgp"} label={"agñ"} />;
+  /*return (
       <div className="App">
         <div>
           <a href="https://vitejs.dev" target="_blank">
@@ -32,4 +36,4 @@ function App() {
     )*/
 }
 
-export default App
+export default App;

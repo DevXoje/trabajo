@@ -1,11 +1,22 @@
+import { Display, Orientation } from "./Common";
+
 export type LinkProps = {
   icon: string;
   text: string;
 
   route: string;
+  onClick: any;
 };
 
 export type LinkListProps = {
+  anchorOrigin?: Orientation;
+  transformOrigin?: Orientation;
   links: LinkProps[];
-  orientation: "vertical" | "horizontal";
+  id: string;
+  anchorEl: null | Element;
+  onClose: any;
+  customStyles?: {
+    mt?: string;
+    display?: Display;
+  };
 };

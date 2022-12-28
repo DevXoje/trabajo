@@ -1,9 +1,16 @@
 import TopNavigation from "../organisms/TopNavigation";
-import Footer from "../organisms/Footer";
-import Link from "../atoms/Link";
-import { LinkProps } from "../../models/Link";
-import LinkList from "../molecules/LinkList";
-
+import StickyFooter from "../organisms/Footer";
+import ProjectGallery from "../organisms/ProjectGallery";
+import Hero from "../organisms/Hero";
+import * as React from "react";
+const mainFeaturedPost = {
+  title: "Title of a longer featured blog post",
+  description:
+    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+  image: "https://source.unsplash.com/random",
+  imageText: "main image description",
+  linkText: "Continue reading…",
+};
 interface PortfolioProps {
   backgroundColor: string;
   label: string;
@@ -12,12 +19,11 @@ interface PortfolioProps {
 function Portfolio({ backgroundColor, label }: PortfolioProps) {
   return (
     <>
-      <TopNavigation backgroundColor={"añgp"} label={"agñ"} />
-      <Footer backgroundColor={"añgp"} label={"agñ"} />
-      <br />
-      <hr />
-      pruebas
-      <br />
+      <TopNavigation />
+      <Hero post={mainFeaturedPost} />
+
+      <ProjectGallery />
+      <StickyFooter />
     </>
   );
 }
