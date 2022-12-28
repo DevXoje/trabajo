@@ -1,5 +1,6 @@
-import Logo from "../../components/atoms/Logo";
-// Logo.stories.ts|tsx
+import Portfolio from "../../components/templates/Portfolio";
+
+// Portfolio.stories.ts|tsx
 import React from 'react';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
@@ -10,11 +11,11 @@ export default {
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
     * to learn how to generate automatic titles
     */
-    title: 'Atoms/Logo',
-    component: Logo,
-} as ComponentMeta<typeof Logo>;
+    title: 'Templates/Portfolio',
+    component: Portfolio,
+} as ComponentMeta<typeof Portfolio>;
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;
+const Template: ComponentStory<typeof Portfolio> = (args) => <Portfolio {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
