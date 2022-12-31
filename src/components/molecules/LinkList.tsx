@@ -3,7 +3,7 @@ import { LinkListProps } from "../../models/Link";
 import Menu from "@mui/material/Menu";
 import * as React from "react";
 
-function LinkList({
+export default function LinkList({
   links,
   customStyles,
   id,
@@ -39,7 +39,6 @@ function LinkList({
   );
 }
 
-export default LinkList;
 /*
 <Menu
               sx={{ mt: "45px" }}

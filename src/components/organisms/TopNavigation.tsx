@@ -12,44 +12,78 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
-
-const settings: LinkProps[] = [
+import {
+  AiOutlineForm,
+  AiOutlineMail,
+  BsLinkedin,
+  BsPersonBadgeFill,
+  GiTechnoHeart,
+  GrContact,
+  ImHeart,
+  ImHome,
+  RiWhatsappFill,
+} from "react-icons/all";
+const prefijo = "34";
+const numero = "622721994";
+const text = "Hola jaja";
+const email = "vilchessanchezjose@gmail.com";
+const mobile_format = `whatsapp://send?text=${text}&phone=+${prefijo}${numero}&abid=+${prefijo}${numero}"`;
+const desktop_format = `http://web.whatsapp.com/send?text=${text}&phone=+${prefijo}${numero}&abid=+${prefijo}${numero}`;
+const contact: LinkProps[] = [
   {
-    text: "Profile",
-    route: "",
-    icon: "",
+    text: "WhatsApp",
+    route: `https://wa.me/${prefijo}${numero}?text=${text}`,
+    icon: <RiWhatsappFill />,
     onClick: "",
   },
   {
-    text: "Account",
-    route: "",
-    icon: "",
+    text: "Linkedin",
+    route: `https://www.linkedin.com/in/jose-vilches-sanchez/`,
+    icon: <BsLinkedin />,
     onClick: "",
   },
   {
-    text: "Dashboard",
-    route: "",
-    icon: "",
+    text: "Email",
+    route: `mailto:${email}?subject=Mail from our Website&body=${text}`,
+    icon: <AiOutlineMail />,
+    onClick: "",
+  },
+  {
+    text: "Form",
+    route: "", //Todo: set route to go to bottom
+    icon: <AiOutlineForm />,
     onClick: "",
   },
 ];
 const pages: LinkProps[] = [
   {
-    text: "Products",
+    text: "Home",
     route: "",
-    icon: "",
+    icon: <ImHome />,
     onClick: "",
   },
   {
-    text: "Pricing",
+    text: "About me",
     route: "",
-    icon: "",
+    icon: <BsPersonBadgeFill />,
     onClick: "",
   },
   {
-    text: "Blog",
+    text: "Soft Skills",
     route: "",
-    icon: "",
+    icon: <ImHeart />,
+    onClick: "",
+  },
+  {
+    text: "Projects",
+    route: "",
+    icon: <GiTechnoHeart />,
+    onClick: "",
+  },
+  {
+    text: "Contact",
+    route: "",
+    icon: <GrContact />,
     onClick: "",
   },
 ];
@@ -129,7 +163,10 @@ function TopNavigation() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="https://source.unsplash.com/random"
+                />
               </IconButton>
             </Tooltip>
             <LinkList
@@ -145,7 +182,7 @@ function TopNavigation() {
                 horizontal: "right",
               }}
               onClose={handleCloseUserMenu}
-              links={pages}
+              links={contact}
             />
           </Box>
         </Toolbar>

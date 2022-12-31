@@ -1,7 +1,7 @@
 import { Display, Orientation } from "./Common";
 
 export type LinkProps = {
-  icon: string;
+  icon?: JSX.Element;
   text: string;
 
   route: string;
