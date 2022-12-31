@@ -1,13 +1,12 @@
-interface FieldProps {
-    backgroundColor: string,
-    label: string
-}
+import Input from "../atoms/Input";
+import { FieldProps } from "../../models/Form";
 
-function Field({backgroundColor, label}: FieldProps) {
-    return (
-        <div> hola mundo {label}</div>
-    );
+function Field({ variant }: FieldProps) {
+  return (
+    <>
+      <Input variant={variant} />
+    </>
+  );
 }
 
 export default Field;
-

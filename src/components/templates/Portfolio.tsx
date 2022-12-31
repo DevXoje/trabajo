@@ -1,11 +1,12 @@
 import TopNavigation from "../organisms/TopNavigation";
-import StickyFooter from "../organisms/Footer";
-import ProjectGallery from "../organisms/ProjectGallery";
-import Hero from "../organisms/Hero";
 import * as React from "react";
-import AboutMe from "../organisms/AboutMe";
 import SoftSkillsGallery from "../organisms/SoftSkillsGallery";
+import { PortfolioProps } from "../../models/Portfolio";
+import Hero from "../organisms/Hero";
+import AboutMe from "../organisms/AboutMe";
+import StickyFooter from "../organisms/Footer";
 import ContactForm from "../organisms/ContactForm";
+import ProjectGallery from "../organisms/ProjectGallery";
 
 const mainFeaturedPost = {
   title: "Title of a longer featured blog post",
@@ -16,14 +17,19 @@ const mainFeaturedPost = {
   linkText: "Continue reading…",
 };
 
-function Portfolio() {
+function Portfolio({
+  contact,
+  softSkills,
+  hardSkills,
+  projects,
+}: PortfolioProps) {
   return (
     <>
       <TopNavigation />
       <Hero post={mainFeaturedPost} />
       <AboutMe />
-      <SoftSkillsGallery />
-      <ProjectGallery />
+      <SoftSkillsGallery skills={softSkills.skills} title={softSkills.title} />
+      <ProjectGallery projects={projects} />
       <ContactForm />
       <StickyFooter />
     </>

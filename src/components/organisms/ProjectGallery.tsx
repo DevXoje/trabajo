@@ -5,7 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import ProjectDescription from "./ProjectDescription";
-import { Project } from "../../models/Project";
+import { ProjectGalleryProps, ProjectProps } from "../../models/Project";
 
 const sections = [
   { title: "Technology", url: "#" },
@@ -20,38 +20,6 @@ const sections = [
   { title: "Travel", url: "#" },
 ];
 
-const featuredPosts: Project[] = [
-  {
-    title: "Featured post",
-    date: "Nov 12",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: {
-      src: "https://source.unsplash.com/random",
-      alt: "Image Text",
-    },
-
-    deployUrl: "",
-    repositoryUrl: "",
-  },
-  {
-    title: "Post title",
-    date: "Nov 11",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: {
-      src: "https://source.unsplash.com/random",
-      alt: "Image Text",
-    },
-
-    deployUrl: "",
-    repositoryUrl: "",
-  },
-];
-
-const posts = featuredPosts.map((post) => (
-  <ProjectDescription key={post.title} project={post} />
-));
 /*const posts = [post1, post2, post3];*/
 
 const sidebar = {
@@ -78,14 +46,18 @@ const sidebar = {
   ],
 };
 
-export default function ProjectGallery() {
+export default function ProjectGallery({ projects }: ProjectGalleryProps) {
+  /*const projectsComplete = projects.map((project) => (
+    <ProjectDescription project={project} />
+  ));*/
+  const projectsComplete = <div>algo</div>;
   return (
     <>
       <Container maxWidth="lg">
         {/*<Header title="Blog" sections={sections} />*/}
 
         <Grid container spacing={4}>
-          {posts}
+          {projectsComplete}
         </Grid>
 
         <Grid container spacing={5} sx={{ mt: 3 }}>
