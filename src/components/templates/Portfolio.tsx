@@ -3,6 +3,10 @@ import StickyFooter from "../organisms/Footer";
 import ProjectGallery from "../organisms/ProjectGallery";
 import Hero from "../organisms/Hero";
 import * as React from "react";
+import AboutMe from "../organisms/AboutMe";
+import SoftSkillsGallery from "../organisms/SoftSkillsGallery";
+import ContactForm from "../organisms/ContactForm";
+
 const mainFeaturedPost = {
   title: "Title of a longer featured blog post",
   description:
@@ -11,18 +15,16 @@ const mainFeaturedPost = {
   imageText: "main image description",
   linkText: "Continue reading…",
 };
-interface PortfolioProps {
-  backgroundColor: string;
-  label: string;
-}
 
-function Portfolio({ backgroundColor, label }: PortfolioProps) {
+function Portfolio() {
   return (
     <>
       <TopNavigation />
       <Hero post={mainFeaturedPost} />
-
+      <AboutMe />
+      <SoftSkillsGallery />
       <ProjectGallery />
+      <ContactForm />
       <StickyFooter />
     </>
   );

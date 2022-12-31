@@ -1,12 +1,14 @@
-interface ContactFormProps {
-    backgroundColor: string,
-    label: string
-}
-
-function ContactForm({backgroundColor, label}: ContactFormProps) {
-    return (
-        <div> hola mundo {label}</div>
-    );
+function ContactForm() {
+  return (
+    <div>
+      <form>
+        <input />
+        <input />
+        <input />
+        <textarea></textarea>
+      </form>
+    </div>
+  );
 }
 
 export default ContactForm;
