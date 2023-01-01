@@ -1,5 +1,5 @@
 export type HeroProps = {
-  post: {
+  content: {
     description: string;
     image: string;
     imageText: string;

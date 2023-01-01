@@ -8,7 +8,7 @@ import StickyFooter from "../organisms/Footer";
 import ContactForm from "../organisms/ContactForm";
 import ProjectGallery from "../organisms/ProjectGallery";
 
-const postHero = {
+const hero_content = {
   title: "Title of a longer featured blog post",
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
@@ -17,19 +17,14 @@ const postHero = {
   linkText: "Continue reading…",
 };
 
-function Portfolio({
-  contact,
-  softSkills,
-  hardSkills,
-  projects,
-}: PortfolioProps) {
+function Portfolio({ props: portfolio }: PortfolioProps) {
   return (
     <>
-      <TopNavigation />
-      <Hero post={postHero} />
-      <AboutMe />
-      <SoftSkillsGallery skills={softSkills.skills} title={softSkills.title} />
-      <ProjectGallery projects={projects} />
+      <TopNavigation props={portfolio.contact} />
+      <Hero content={hero_content} />
+      <AboutMe props={portfolio.contact} />
+      <SoftSkillsGallery props={portfolio.softSkills.props} />
+      <ProjectGallery props={portfolio.projects.props} />
       <ContactForm />
       <StickyFooter />
     </>

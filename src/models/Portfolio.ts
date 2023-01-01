@@ -1,13 +1,34 @@
-import { SkillGallery } from "./Skills";
-import { ProjectGallery } from "./Project";
+import { SkillGalleryProps } from "./Skills";
+import { ProjectGalleryProps } from "./Project";
 
-export type PortfolioProps = {
-  contact: {
-    name: string;
-    email: string;
-    phone: string;
+export type Contact = {
+  name: string;
+  email: string;
+  phone: string;
+  photo: string;
+  linkedin: string;
+  description: Description;
+  message: {
+    subject: string;
+    content: string;
   };
-  softSkills: SkillGallery;
-  hardSkills: SkillGallery;
-  projects: ProjectGallery;
+};
+export type ContactProps = {
+  props: Contact;
+};
+type Description = {
+  title: string;
+  paragraphs: string[];
+};
+export type DescriptionProps = {
+  props: Description;
+};
+export type PortfolioProps = {
+  props: Portfolio;
+};
+type Portfolio = {
+  contact: Contact;
+  softSkills: SkillGalleryProps;
+  hardSkills: SkillGalleryProps;
+  projects: ProjectGalleryProps;
 };

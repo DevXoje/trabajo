@@ -23,72 +23,62 @@ import {
   ImHome,
   RiWhatsappFill,
 } from "react-icons/all";
-const prefijo = "34";
-const numero = "622721994";
-const text = "Hola jaja";
-const email = "vilchessanchezjose@gmail.com";
-const mobile_format = `whatsapp://send?text=${text}&phone=+${prefijo}${numero}&abid=+${prefijo}${numero}"`;
-const desktop_format = `http://web.whatsapp.com/send?text=${text}&phone=+${prefijo}${numero}&abid=+${prefijo}${numero}`;
-const contact: LinkProps[] = [
-  {
-    text: "WhatsApp",
-    route: `https://wa.me/${prefijo}${numero}?text=${text}`,
-    icon: <RiWhatsappFill />,
-    onClick: "",
-  },
-  {
-    text: "Linkedin",
-    route: `https://www.linkedin.com/in/jose-vilches-sanchez/`,
-    icon: <BsLinkedin />,
-    onClick: "",
-  },
-  {
-    text: "Email",
-    route: `mailto:${email}?subject=Mail from our Website&body=${text}`,
-    icon: <AiOutlineMail />,
-    onClick: "",
-  },
-  {
-    text: "Form",
-    route: "", //Todo: set route to go to bottom
-    icon: <AiOutlineForm />,
-    onClick: "",
-  },
-];
+import { Contact, ContactProps } from "../../models/Portfolio";
+
 const pages: LinkProps[] = [
   {
     text: "Home",
     route: "",
     icon: <ImHome />,
-    onClick: "",
   },
   {
     text: "About me",
     route: "",
     icon: <BsPersonBadgeFill />,
-    onClick: "",
   },
   {
     text: "Soft Skills",
     route: "",
     icon: <ImHeart />,
-    onClick: "",
   },
   {
     text: "Projects",
     route: "",
     icon: <GiTechnoHeart />,
-    onClick: "",
   },
   {
     text: "Contact",
     route: "",
     icon: <GrContact />,
-    onClick: "",
   },
 ];
 
-function TopNavigation() {
+function TopNavigation({ props: contact }: ContactProps) {
+  const contact_links: LinkProps[] = [
+    {
+      text: "WhatsApp",
+      route: `https://wa.me/${"34"}${contact.phone}?text=${
+        contact.message.content
+      }`,
+      icon: <RiWhatsappFill />,
+    },
+    {
+      text: "Linkedin",
+      route: contact.linkedin,
+      icon: <BsLinkedin />,
+    },
+    {
+      text: "Email",
+      route: `mailto:${contact.email}?subject=${contact.message.subject}&body=${contact.message.content}`,
+      icon: <AiOutlineMail />,
+    },
+    {
+      text: "Form",
+      route: "", //Todo: set route to go to bottom
+      icon: <AiOutlineForm />,
+    },
+  ];
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -182,7 +172,7 @@ function TopNavigation() {
                 horizontal: "right",
               }}
               onClose={handleCloseUserMenu}
-              links={contact}
+              links={contact_links}
             />
           </Box>
         </Toolbar>

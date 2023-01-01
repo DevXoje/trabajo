@@ -10,5 +10,8 @@ export type ProjectProps = {
 };
 
 export type ProjectGalleryProps = {
-  projects: ProjectProps[];
+  props: ProjectGallery;
+};
+export type ProjectGallery = {
+  items: ProjectProps[];
 };

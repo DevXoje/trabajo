@@ -5,7 +5,6 @@ export type LinkProps = {
   text: string;
 
   route: string;
-  onClick: any;
 };
 
 export type LinkListProps = {

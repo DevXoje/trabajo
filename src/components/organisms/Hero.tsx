@@ -5,8 +5,9 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import { HeroProps } from "../../models/Hero";
+import Card from "../atoms/Card";
 
-export default function Hero({ post }: HeroProps) {
+export default function Hero({ content }: HeroProps) {
   return (
     <Paper
       sx={{
@@ -17,7 +18,7 @@ export default function Hero({ post }: HeroProps) {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundImage: `url(${post.image})`,
+        backgroundImage: `url(${content.image})`,
         height: "90vh",
       }}
     >
@@ -25,8 +26,8 @@ export default function Hero({ post }: HeroProps) {
       {
         <img
           style={{ display: "none" }}
-          src={post.image}
-          alt={post.imageText}
+          src={content.image}
+          alt={content.imageText}
         />
       }
       <Box
@@ -54,16 +55,17 @@ export default function Hero({ post }: HeroProps) {
               color="inherit"
               gutterBottom
             >
-              {post.title}
+              {content.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
+              {content.description}
             </Typography>
             <Link variant="subtitle1" href="#">
-              {post.linkText}
+              {content.linkText}
             </Link>
           </Box>
         </Grid>
+        <Card />
       </Grid>
     </Paper>
   );

@@ -1,15 +1,19 @@
-import { IconType } from "react-icons";
-
 export type sSkill = {
   algo: string | number;
 };
-
 export type Skill = {
   title: string;
   body: string;
   icon: JSX.Element;
 };
-export type SkillGallery = {
+
+export type SkillProps = {
+  props: Skill;
+};
+export type SkillGalleryProps = {
+  props: GalleryProps;
+};
+export type GalleryProps = {
   title: string;
-  skills: Skill[];
+  items: SkillProps[];
 };

@@ -1,7 +1,9 @@
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import personImg from "../../assets/person.png";
-export default function PhotoPerson() {
+type Photo = {
+  photo: string;
+};
+export default function PhotoPerson({ photo }: Photo) {
   return (
     <>
       <Box
@@ -17,7 +19,7 @@ export default function PhotoPerson() {
       >
         <Paper elevation={24}>
           <img
-            src={personImg}
+            src={photo}
             style={{ width: "100%", height: "auto" }}
             alt={"algo"}
           />
