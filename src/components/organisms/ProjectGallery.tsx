@@ -7,10 +7,11 @@ export default function ProjectGallery({
   props: projectGallery,
 }: ProjectGalleryProps) {
   /*const projectsComplete = projects.map((project) => (
-    <ProjectDescription project={project} />
-  ));*/
+        <ProjectDescription project={project} />
+      ));*/
   const projectsComplete = <div>algo</div>;
   return (
+    /*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*/
     <>
       <Container maxWidth="lg">
         {/*<Header title="Blog" sections={sections} />*/}
