@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { ContactProps } from "../../models/Portfolio";
 import { SkillGalleryProps } from "../../models/Skills";
-import SkillList from "../molecules/SkillList";
 
 export default function AboutMe(
   { props: contact }: ContactProps,
@@ -22,7 +21,7 @@ export default function AboutMe(
               <Resume props={contact.description} />
             </Grid>
             <Grid xs={12} item={true}>
-              <SkillList props={skills.props} />
+              {/*<SkillList props={skills.props} />*/}
             </Grid>
           </Grid>
         </Grid>

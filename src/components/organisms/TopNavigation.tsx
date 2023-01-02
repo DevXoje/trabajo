@@ -23,7 +23,7 @@ import {
   ImHome,
   RiWhatsappFill,
 } from "react-icons/all";
-import { Contact, ContactProps } from "../../models/Portfolio";
+import { ContactProps } from "../../models/Portfolio";
 
 const pages: LinkProps[] = [
   {

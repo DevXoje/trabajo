@@ -1,9 +1,8 @@
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-type Photo = {
-  photo: string;
-};
-export default function PhotoPerson({ photo }: Photo) {
+import { PhotoPersonProps } from "../../models/Image";
+
+export default function PhotoPerson({ photo }: PhotoPersonProps) {
   return (
     <>
       <Box
@@ -19,9 +18,9 @@ export default function PhotoPerson({ photo }: Photo) {
       >
         <Paper elevation={24}>
           <img
-            src={photo}
+            src={photo.src}
             style={{ width: "100%", height: "auto" }}
-            alt={"algo"}
+            alt={photo.alt}
           />
         </Paper>
       </Box>

@@ -1,11 +1,12 @@
 import { SkillGalleryProps } from "./Skills";
 import { ProjectGalleryProps } from "./Project";
+import { Image } from "./Image";
 
 export type Contact = {
   name: string;
   email: string;
   phone: string;
-  photo: string;
+  photo: Image;
   linkedin: string;
   description: Description;
   message: {
