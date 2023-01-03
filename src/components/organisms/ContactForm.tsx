@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Field from "../molecules/Field";
-import { Fab } from "@mui/material";
+import { Fab, Stack } from "@mui/material";
 import { BiMailSend } from "react-icons/all";
 export default function ContactForm() {
   return (
@@ -12,15 +12,20 @@ export default function ContactForm() {
       noValidate
       autoComplete="off"
       id={"formContact"}
+      sx={{
+        maxWidth: "400px",
+      }}
     >
-      <Field variant={"text"} />
-      <Field variant={"textarea"} />
+      <Stack spacing={4}>
+        <Field variant={"text"} />
+        <Field variant={"textarea"} />
 
-      <Field variant={"checkbox"} />
-      <Fab variant="extended">
-        <BiMailSend size={40} />
-        Submit
-      </Fab>
+        <Field variant={"checkbox"} />
+        <Fab variant="extended">
+          <BiMailSend size={40} />
+          Submit
+        </Fab>
+      </Stack>
     </Box>
   );
 }
