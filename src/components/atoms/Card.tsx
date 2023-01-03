@@ -1,14 +1,19 @@
-export default function Card() {
+import { Contact, ContactProps } from "../../models/Portfolio";
+
+export default function Card({ props: contact }: ContactProps) {
+  const { name, photo, age } = contact;
   return (
     <div className="card">
-      <div className="card-avatar"></div>
+      <div className="card-avatar">
+        <img src={photo.src} width={"100px"} alt={photo.alt} />
+      </div>
       <div className="card-details">
-        <div className="name">Saitama</div>
+        <div className="name">{name}</div>
         <div className="occupation">Hero</div>
 
         <div className="card-about">
           <div className="item">
-            <span className="value">25</span>
+            <span className="value">{age}</span>
             <span className="label">Age</span>
           </div>
           <div className="item">

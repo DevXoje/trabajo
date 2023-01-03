@@ -27,55 +27,71 @@ import { ContactProps } from "../../models/Portfolio";
 
 const pages: LinkProps[] = [
   {
-    text: "Home",
-    route: "",
-    icon: <ImHome />,
+    props: {
+      text: "Home",
+      route: "",
+      icon: <ImHome />,
+    },
   },
   {
-    text: "About me",
-    route: "",
-    icon: <BsPersonBadgeFill />,
+    props: {
+      text: "About me",
+      route: "",
+      icon: <BsPersonBadgeFill />,
+    },
   },
   {
-    text: "Soft Skills",
-    route: "",
-    icon: <ImHeart />,
+    props: {
+      text: "Soft Skills",
+      route: "",
+      icon: <ImHeart />,
+    },
   },
   {
-    text: "Projects",
-    route: "",
-    icon: <GiTechnoHeart />,
+    props: {
+      text: "Projects",
+      route: "",
+      icon: <GiTechnoHeart />,
+    },
   },
   {
-    text: "Contact",
-    route: "",
-    icon: <GrContact />,
+    props: {
+      text: "Contact",
+      route: "",
+      icon: <GrContact />,
+    },
   },
 ];
 
 function TopNavigation({ props: contact }: ContactProps) {
   const contact_links: LinkProps[] = [
     {
-      text: "WhatsApp",
-      route: `https://wa.me/${"34"}${contact.phone}?text=${
-        contact.message.content
-      }`,
-      icon: <RiWhatsappFill />,
+      props: {
+        text: "WhatsApp",
+        route: `https://wa.me/s34${contact.phone}?text=${contact.message.content}}`,
+        icon: <RiWhatsappFill />,
+      },
     },
     {
-      text: "Linkedin",
-      route: contact.linkedin,
-      icon: <BsLinkedin />,
+      props: {
+        text: "Linkedin",
+        route: contact.linkedin,
+        icon: <BsLinkedin />,
+      },
     },
     {
-      text: "Email",
-      route: `mailto:${contact.email}?subject=${contact.message.subject}&body=${contact.message.content}`,
-      icon: <AiOutlineMail />,
+      props: {
+        text: "Email",
+        route: `mailto:${contact.email}?subject=${contact.message.subject}&body=${contact.message.content}`,
+        icon: <AiOutlineMail />,
+      },
     },
     {
-      text: "Form",
-      route: "", //Todo: set route to go to bottom
-      icon: <AiOutlineForm />,
+      props: {
+        text: "Form",
+        route: "", //Todo: set route to go to bottom
+        icon: <AiOutlineForm />,
+      },
     },
   ];
 
@@ -100,6 +116,19 @@ function TopNavigation({ props: contact }: ContactProps) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const pagesComplete = pages.map((pageProps) => {
+    const { props: page } = pageProps;
+    return (
+      <Button
+        key={page.text}
+        onClick={handleCloseNavMenu}
+        sx={{ my: 2, color: "white", display: "block" }}
+      >
+        {" "}
+        {page.text}
+      </Button>
+    );
+  });
 
   return (
     <AppBar position="static">
@@ -117,7 +146,7 @@ function TopNavigation({ props: contact }: ContactProps) {
             >
               <MenuIcon />
             </IconButton>
-            <LinkList
+            {/*<LinkList
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "left",
@@ -127,11 +156,11 @@ function TopNavigation({ props: contact }: ContactProps) {
                 horizontal: "left",
               }}
               links={pages}
-              id={"menu-appbar"}
+              id={"menu-appbar-pages"}
               anchorEl={anchorElNav}
               onClose={handleCloseNavMenu}
               customStyles={{ display: { xs: "block", md: "none" } }}
-            />
+            />*/}
           </Box>
           <Logo
             variant={"h5"}
@@ -139,15 +168,7 @@ function TopNavigation({ props: contact }: ContactProps) {
             flexGrow={1}
           />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.text}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.text}
-              </Button>
-            ))}
+            {pagesComplete}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -159,9 +180,9 @@ function TopNavigation({ props: contact }: ContactProps) {
                 />
               </IconButton>
             </Tooltip>
-            <LinkList
+            {/* <LinkList
               customStyles={{ mt: "45px" }}
-              id={"menu-appbar"}
+              id={"menu-appbar-contact"}
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
@@ -173,7 +194,7 @@ function TopNavigation({ props: contact }: ContactProps) {
               }}
               onClose={handleCloseUserMenu}
               links={contact_links}
-            />
+            />*/}
           </Box>
         </Toolbar>
       </Container>

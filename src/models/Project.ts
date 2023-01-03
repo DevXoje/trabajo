@@ -1,6 +1,9 @@
 import { Image } from "./Image";
 
 export type ProjectProps = {
+  props: Project;
+};
+export type Project = {
   title: string;
   deployUrl: string;
   repositoryUrl: string;
@@ -8,7 +11,6 @@ export type ProjectProps = {
   description: string;
   image: Image;
 };
-
 export type ProjectGalleryProps = {
   props: ProjectGallery;
 };

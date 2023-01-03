@@ -4,6 +4,7 @@ import { Image } from "./Image";
 
 export type Contact = {
   name: string;
+  age: number;
   email: string;
   phone: string;
   photo: Image;

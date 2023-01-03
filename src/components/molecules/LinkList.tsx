@@ -12,20 +12,9 @@ export default function LinkList({
   anchorOrigin,
   transformOrigin,
 }: LinkListProps) {
-  const allLinks = links.map((link) => (
-    <Link
-      key={link.text}
-      icon={link.icon}
-      text={link.text}
-      route={link.route}
-      onClick={() => {
-        alert("click");
-      }}
-    />
-  ));
+  const allLinks = links.map((link) => <Link props={link.props} />);
   return (
     <Menu
-      id={id}
       anchorEl={anchorEl}
       anchorOrigin={anchorOrigin}
       keepMounted

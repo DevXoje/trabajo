@@ -3,7 +3,7 @@ import LinkList from "../../components/molecules/LinkList";
 import React from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { LinkProps } from "../../models/Link";
+import { Link } from "../../models/Link";
 
 export default {
   /* 👇 The title prop is optional.
@@ -17,7 +17,7 @@ export default {
 const Template: ComponentStory<typeof LinkList> = (args) => (
   <LinkList {...args} />
 );
-const linkListPlaceHolder: LinkProps[] = [
+const linkListPlaceHolder: Link[] = [
   {
     text: "algo",
     route: "",

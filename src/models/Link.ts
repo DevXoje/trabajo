@@ -1,12 +1,16 @@
 import { Display, Orientation } from "./Common";
+import { Variant } from "@mui/material/styles/createTypography";
 
-export type LinkProps = {
+export type Link = {
   icon?: JSX.Element;
   text: string;
 
   route: string;
+  variant?: Variant;
 };
-
+export type LinkProps = {
+  props: Link;
+};
 export type LinkListProps = {
   anchorOrigin?: Orientation;
   transformOrigin?: Orientation;

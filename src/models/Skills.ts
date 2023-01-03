@@ -1,6 +1,3 @@
-export type sSkill = {
-  algo: string | number;
-};
 export type Skill = {
   title: string;
   body: string;
@@ -11,9 +8,9 @@ export type SkillProps = {
   props: Skill;
 };
 export type SkillGalleryProps = {
-  props: GalleryProps;
+  props: Gallery;
 };
-export type GalleryProps = {
+export type Gallery = {
   title: string;
   items: SkillProps[];
 };

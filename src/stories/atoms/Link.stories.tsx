@@ -3,6 +3,8 @@ import Link from "../../components/atoms/Link";
 import React from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+//import { Meta,Story } from "@storybook/react";
+import { LinkProps } from "../../models/Link";
 
 export default {
   /* 👇 The title prop is optional.
@@ -13,7 +15,9 @@ export default {
   component: Link,
 } as ComponentMeta<typeof Link>;
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />;
+const Template: ComponentStory<typeof Link> = (args: LinkProps) => (
+  <Link {...args} />
+);
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

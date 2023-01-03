@@ -2,22 +2,22 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { ProjectGalleryProps } from "../../models/Project";
+import ProjectDescription from "./ProjectDescription";
 
 export default function ProjectGallery({
   props: projectGallery,
 }: ProjectGalleryProps) {
-  /*const projectsComplete = projects.map((project) => (
-        <ProjectDescription project={project} />
-      ));*/
-  const projectsComplete = <div>algo</div>;
+  const projectsComplete = projectGallery.items.map((project) => (
+    <ProjectDescription props={project.props} />
+  ));
+  /*const projectsComplete = <div>galeria proyectos</div>;*/
   return (
-    /*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*/
     <>
       <Container maxWidth="lg">
         {/*<Header title="Blog" sections={sections} />*/}
 
         <Grid container spacing={4}>
-          {projectsComplete}
+          {/*{projectsComplete}*/}
         </Grid>
 
         <Grid container spacing={5} sx={{ mt: 3 }}>
